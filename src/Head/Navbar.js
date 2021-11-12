@@ -31,7 +31,7 @@ export default function Navbar() {
         axios.get(url)
         .then((res)=>{
             setGenres(res.data.genres) 
-            console.log('genres=>', genres)          
+            console.log('genres=>', url, res.data.genres)          
                       
         })
         .catch((err)=>console.log(err))
@@ -55,38 +55,38 @@ export default function Navbar() {
     //     // )
     //   }
 
-    // const genreList = genres.map((genre, id)=>{
-    //     return(
+    const genreList = genres.map((genre, id)=>{
+        return(
            
-    //         <div key = {genre.id} className="dropdown-item">
-    //             <div value = {genre.name} className="dropdown-link"  onMouseOver= {(e) => {
-    //                 setCurrentGenre(genre)                 
+            <div key = {genre.id} className="dropdown-item">
+                {/* <div value = {genre.name} className="dropdown-link"  onMouseOver= {(e) => {
+                    setCurrentGenre(genre)                 
                     
-    //             }} onClick={(e)=>{
-    //                 e.preventDefault() 
-    //                 let genreUrl = "/list/"+currentGenre.id+"?"
-    //                 history.push({
-    //                     pathname: "/listByGenre",
-    //                     state: {
-    //                         url : genreUrl,
-    //                         message : currentGenre.name
-    //                     }
+                }} onClick={(e)=>{
+                    e.preventDefault() 
+                    let genreUrl = "/list/"+currentGenre.id+"?"
+                    history.push({
+                        pathname: "/listByGenre",
+                        state: {
+                            url : genreUrl,
+                            message : currentGenre.name
+                        }
                     
-    //                 })
-    //                 }
-    //                 }
-    //                >{genre.name}</div> 
+                    })
+                    }
+                    }
+                   >{genre.name}</div>  */}
           
-              
-    //         </div>
-    //     )
-    // })
+          <div value = {genre.name} className="dropdown-link"  >{genre.id}.{genre.name}</div>
+            </div>
+        )
+    })
     return (
         <div className="row justify-content-center">
             <div className="nav">
                 <a onClick = {(e)=>{ history.push('/') }}>Home</a>
                 <a href ="/about-us">About us</a>
-                {/* <a className="dropdown-btn" onClick= {e => {
+                <a className="dropdown-btn" onClick= {e => {
                     setIsOpen(!isOpen)
                 }}>Genres
                 {isOpen &&(
@@ -94,9 +94,8 @@ export default function Navbar() {
                      {genreList}
                    </div>
                 )}                 
-                </a> */}
-                <a className="dropdown-btn"> Genres</a>
-                
+                </a>
+                               
                 <a  onClick = {(e)=>{ history.push('/series') }}>Series</a>
                 <a  onClick = {(e)=>{ history.push('/popular') }}>Popular</a>
                 <a  onClick = {(e)=>{ history.push('/trending') }}>Trending</a>
