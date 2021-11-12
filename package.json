@@ -20,6 +20,7 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
+    "serve": "^13.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -28,7 +29,9 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build",
+
   },
   "eslintConfig": {
     "extends": [
