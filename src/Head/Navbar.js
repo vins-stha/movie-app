@@ -3,9 +3,7 @@ import bootstrap from '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './Navbar.css'
 import axios from 'axios'
 import { useHistory } from 'react-router';
-import MoviesSeriesComponents from './../Body/MoviesSeriesComponents';
-import FilterByGenre from '../Body/ListByGenre';
-import { Link } from "react-router-dom";
+
 
 
 export default function Navbar() {
@@ -37,23 +35,6 @@ export default function Navbar() {
         .catch((err)=>console.log(err))
      }, [])
 
-    // const handleGenreClick = (e)=> {
-    //     e.preventDefault()        
-    //     // console.log('cg', cg)
-    //     let genreUrl = "/list/"+currentGenre.id 
-    //     history.push({
-    //         pathname: "/listByGenre",
-    //         state: {
-    //             url : 'test',
-    //             message :' currentGenrename'
-    //         }
-        
-    //     })
-    //     // console.log('cgg', currentGenre)
-    //     // return(
-    //     //     <FilterByGenre url = {genreUrl} message = {currentGenre.name}/>
-    //     // )
-    //   }
 
     const genreList = genres.map((genre, id)=>{
         return(
@@ -75,9 +56,7 @@ export default function Navbar() {
                     })
                     }
                     }
-                   >{genre.id}:{genre.name}</div> 
-          
-          {/* <div value = {genre.name} className="dropdown-link"  >{genre.id}.{genre.name}</div> */}
+                   >{genre.name}</div> 
             </div>
         )
     })

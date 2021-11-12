@@ -5,7 +5,7 @@ function Trending() {
   const url = "/trending/all/day?"
   return (
       <div>
-        <MoviesSeriesComponents url={url} message="Trending.."/>
+        <MoviesSeriesComponents url={url} message="Trending..."/>
       </div>
   )
 }
