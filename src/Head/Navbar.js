@@ -59,7 +59,7 @@ export default function Navbar() {
         return(
            
             <div key = {genre.id} className="dropdown-item">
-                {/* <div value = {genre.name} className="dropdown-link"  onMouseOver= {(e) => {
+                <div value = {genre.name} className="dropdown-link"  onMouseOver= {(e) => {
                     setCurrentGenre(genre)                 
                     
                 }} onClick={(e)=>{
@@ -75,9 +75,9 @@ export default function Navbar() {
                     })
                     }
                     }
-                   >{genre.name}</div>  */}
+                   >{genre.id}:{genre.name}</div> 
           
-          <div value = {genre.name} className="dropdown-link"  >{genre.id}.{genre.name}</div>
+          {/* <div value = {genre.name} className="dropdown-link"  >{genre.id}.{genre.name}</div> */}
             </div>
         )
     })

@@ -25,17 +25,21 @@ function MoviesSeriesComponents(props) {
   }, [])
 
   function retrieveData(url) {
+    console.log(url)
     axios.get(url)
         .then((response) => {
-          console.log('response = ',response.data)
-          // if (!props.isGenreSpecific) {
-          //   console.log('main response', props.isGenreSpecific, response.data, response.data.results[0].id)
-
-          //   setMovies(response.data.results)
-          // } else 
-          
-            console.log('.items = ',response.data.results)
-            setMovies(response.data.results)                 
+          console.log('response = ',response.data, "genrespecific =", props.isGenreSpecific)
+      
+          if (props.isGenreSpecific === true)
+          {
+            console.log('.results = ',response.data.items)
+            setMovies(response.data.items)  
+          }
+          else
+          {
+            console.log('.results = ',response.data.results)
+            setMovies(response.data.results)  
+          }            
 
         })
         .catch((error) => {
