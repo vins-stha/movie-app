@@ -27,15 +27,15 @@ export default function Navbar() {
 
     var url = BASE_URL + "/genre/movie/list?&api_key="+ API_KEY
 
-    // useEffect(() => {     
-    //     axios.get(url)
-    //     .then((res)=>{
-    //         setGenres(res.data.genres) 
-    //         console.log('genres=>', genres)          
+    useEffect(() => {     
+        axios.get(url)
+        .then((res)=>{
+            setGenres(res.data.genres) 
+            console.log('genres=>', genres)          
                       
-    //     })
-    //     .catch((err)=>console.log(err))
-    //  }, [])
+        })
+        .catch((err)=>console.log(err))
+     }, [])
 
     // const handleGenreClick = (e)=> {
     //     e.preventDefault()        
