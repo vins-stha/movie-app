@@ -18,8 +18,8 @@ function MoviesSeriesComponents(props) {
   const [message, setMessage] = useState([])
 
   useEffect(() => {
-    retrieveData(url)
 
+    retrieveData(url)
     setMessage(props.message)
 
   }, [])
@@ -27,16 +27,15 @@ function MoviesSeriesComponents(props) {
   function retrieveData(url) {
     axios.get(url)
         .then((response) => {
-          console.log(response.data)
+          console.log('response = ',response.data)
           // if (!props.isGenreSpecific) {
           //   console.log('main response', props.isGenreSpecific, response.data, response.data.results[0].id)
 
           //   setMovies(response.data.results)
           // } else 
-          {
-            console.log(response.data.items)
-            setMovies(response.data.items)
-          }
+          
+            console.log('.items = ',response.data.results)
+            setMovies(response.data.results)                 
 
         })
         .catch((error) => {
