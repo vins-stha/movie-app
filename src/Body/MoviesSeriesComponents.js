@@ -27,11 +27,13 @@ function MoviesSeriesComponents(props) {
   function retrieveData(url) {
     axios.get(url)
         .then((response) => {
-          if (!props.isGenreSpecific) {
-            console.log('main response', props.isGenreSpecific, response.data, response.data.results[0].id)
+          console.log(response.data)
+          // if (!props.isGenreSpecific) {
+          //   console.log('main response', props.isGenreSpecific, response.data, response.data.results[0].id)
 
-            setMovies(response.data.results)
-          } else {
+          //   setMovies(response.data.results)
+          // } else 
+          {
             console.log(response.data.items)
             setMovies(response.data.items)
           }
