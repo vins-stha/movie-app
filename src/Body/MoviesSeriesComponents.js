@@ -61,7 +61,7 @@ function MoviesSeriesComponents(props) {
     retrieveData(url)
   }
 
-  var movie_items = movies.length > 0 && movies.map((movie, id) => {
+  var movie_items = movies.map((movie, id) => {
     return (
         <div className="movie-item" key={movie.id}>
           <img className="movie-poster"
