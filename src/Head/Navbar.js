@@ -30,7 +30,8 @@ export default function Navbar() {
     useEffect(() => {     
         axios.get(url)
         .then((res)=>{
-            setGenres(res.data.genres)           
+            setGenres(res.data.genres) 
+            console.log('genres=>', genres)          
                       
         })
         .catch((err)=>console.log(err))
